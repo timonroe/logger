@@ -9,10 +9,10 @@ export default class Logger {
   logError: boolean;
 
   constructor(params: {
-    logInfo: boolean,
-    logVerbose: boolean,
-    logWarning: boolean,
-    logError: boolean
+    logInfo?: boolean,
+    logVerbose?: boolean,
+    logWarning?: boolean,
+    logError?: boolean
   }) {
     this.logInfo = params && params.logInfo === true;
     this.logVerbose = params && params.logVerbose === true;
@@ -84,6 +84,12 @@ export default class Logger {
   logger.verbose(`verify verbose message does not display`);
   logger.warn(`verify warning message does not display`);
   logger.error(`only error message displays`);
+  console.log();
+  logger = new Logger({ logInfo: true });
+  logger.info(`only info message displays`);
+  logger.verbose(`verify verbose message does not display`);
+  logger.warn(`verify warning message does not display`);
+  logger.error(`verify error message does not display`);
   console.log();
 })();
 */

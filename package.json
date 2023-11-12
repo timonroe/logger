@@ -1,6 +1,6 @@
 {
   "name": "@soralinks/logger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Logs info, warnings and errors to stdout and stderr",
   "author": "Tim Monroe <timonroe12@gmail.com>",
   "types": "./index.d.ts",
@@ -9,7 +9,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "./build.sh"
+    "build": "./build.sh",
+    "execute": "node ./index"
   },
   "devDependencies": {
     "@types/node": "^20.9.0",
