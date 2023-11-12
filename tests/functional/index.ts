@@ -1,5 +1,5 @@
 
-import Logger from '../../index.js';
+import { Logger } from '../../index.js';
 
 // Some basic tests...
 (async () => {

@@ -1,4 +1,4 @@
-import Logger from '../../index.js';
+import { Logger } from '../../index.js';
 // Some basic tests...
 (async () => {
     let logger = new Logger({ logInfo: true, logVerbose: true, logWarning: true, logError: true });
