@@ -25,4 +25,3 @@ logger.warn(`logging a warning: %s`, 'my warning message');  // this message wil
 logger.error(`logging an error: %s`, 'my error message');
 
 ```
-

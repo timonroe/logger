@@ -1,7 +1,7 @@
 {
   "name": "@soralinks/logger",
-  "version": "0.0.5",
-  "description": "Logs info, warnings and errors to stdout and stderr",
+  "version": "0.0.6",
+  "description": "Logs info and verbose messages to stdout, warn and errors messages to stderr",
   "author": "Tim Monroe <timonroe12@gmail.com>",
   "types": "./index.d.ts",
   "main": "./index.js",
@@ -9,8 +9,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "./build.sh",
-    "execute": "node ./index"
+    "build": "./build.sh"
   },
   "devDependencies": {
     "@types/node": "^20.9.0",
@@ -18,5 +17,6 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "chalk": "^5.3.0"
   }
 }

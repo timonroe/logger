@@ -1,7 +1,10 @@
-import { Console } from 'node:console';
-import { stdout, stderr } from 'node:process';
+import chalk from 'chalk';
+const clrInfo = chalk.whiteBright;
+const clrVerbose = chalk.yellowBright;
+const clrWarn = chalk.rgb(255, 165, 0); // Orange
+const clrError = chalk.redBright;
 export class Logger {
-    console;
+    logging;
     logInfo;
     logVerbose;
     logWarning;
@@ -12,29 +15,30 @@ export class Logger {
         this.logWarning = params && params.logWarning === true;
         this.logError = params && params.logError === true;
         if (!this.logInfo && !this.logVerbose && !this.logWarning && !this.logError) {
-            this.console = undefined;
-            return;
+            this.logging = false;
         }
-        this.console = new Console({ stdout, stderr });
+        else {
+            this.logging = true;
+        }
     }
     info(message, ...optionalParams) {
-        if (!this.logInfo || !this.console || !message)
+        if (!this.logging || !this.logInfo || !message)
             return;
-        this.console.info(message, ...optionalParams);
+        console.info(clrInfo(message), ...optionalParams);
     }
     verbose(message, ...optionalParams) {
-        if (!this.logVerbose || !this.console || !message)
+        if (!this.logging || !this.logVerbose || !message)
             return;
-        this.console.info(message, ...optionalParams);
+        console.info(clrVerbose(message), ...optionalParams);
     }
     warn(message, ...optionalParams) {
-        if (!this.logWarning || !this.console || !message)
+        if (!this.logging || !this.logWarning || !message)
             return;
-        this.console.warn(message, ...optionalParams);
+        console.warn(clrWarn(message), ...optionalParams);
     }
     error(message, ...optionalParams) {
-        if (!this.logError || !this.console || !message)
+        if (!this.logging || !this.logError || !message)
             return;
-        this.console.error(message, ...optionalParams);
+        console.error(clrError(message), ...optionalParams);
     }
 }
