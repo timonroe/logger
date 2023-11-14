@@ -1,6 +1,6 @@
 {
   "name": "@soralinks/logger",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Logs info and verbose messages to stdout, warn and errors messages to stderr",
   "author": "Tim Monroe <timonroe12@gmail.com>",
   "types": "./index.d.ts",
